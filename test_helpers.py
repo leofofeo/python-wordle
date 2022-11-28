@@ -1,5 +1,6 @@
 from helpers import (letters_in_word, letters_not_in_word,
-                     matches_known_positions, return_relevant_words)
+                     matches_known_positions, parse_known_positions,
+                     return_relevant_words)
 
 
 def test_letters_in_word():
@@ -99,3 +100,13 @@ def test_return_relevant_words():
         known_letters_neg=known_letters_neg,
         known_positions=known_positions,
     )
+
+def test_parse_known_positions():
+    kp = "_e__l"
+    result = parse_known_positions(kp)
+    expected = {"second": "e", "fifth": "l"}
+    assert result == expected
+
+    kp = ""
+    result = parse_known_positions(kp)
+    assert result == {}

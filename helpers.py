@@ -38,3 +38,19 @@ def return_relevant_words(words, known_letters_pos, known_letters_neg, **kwargs)
     ]
     return relevant_words
 
+def parse_known_positions(known_positions: str):
+    order_keys = {
+        "1": "first",
+        "2": "second",
+        "3": "third",
+        "4": "fourth",
+        "5": "fifth",
+    }
+    final_kp = {}
+    known_positions = [c for c in known_positions]
+    for idx, c in enumerate(known_positions):
+        if c == "_":
+            continue
+        key = order_keys[str(idx + 1)]
+        final_kp[key] = c
+    return final_kp

@@ -1,4 +1,4 @@
-words = """aardvark
+aardvark
 aardwolf
 aaron
 aback
@@ -58108,4 +58108,3 @@ zooplankton
 zoos
 zulu
 zulus
-"""
